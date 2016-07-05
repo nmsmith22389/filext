@@ -1,0 +1,62 @@
+// Colors
+$light-gray:     #e6e6e6;
+$medium-gray:    #cacaca;
+$dark-gray:      #8a8a8a;
+$black:          #0a0a0a;
+$white:          #fefefe;
+
+// Settings
+$size:           1;
+$bg-color:       #f6f6f6;
+$icon-bg-color:  $white;
+$border-color:   $medium-gray;
+$base-text-size: 0.9em;
+
+.filext {
+    display: inline-block;
+    background-color: $bg-color;
+    vertical-align: baseline;
+    color: $black;
+    font: {
+        size: $base-text-size * $size;
+        family: Arial;
+        weight: normal;
+    }
+    line-height: 22px * $size;
+    height: 22px * $size;
+    border: 1px solid $border-color {
+        radius: 3px;
+    }
+    padding: {
+        top: 6px;
+        right: 10px;
+        bottom: 5px;
+        left: 6px;
+    }
+    margin: {
+        left: 4px;
+        right: 4px;
+    }
+    .filext-icon {
+        display: inline-block;
+        vertical-align: middle;
+        background-color: $icon-bg-color;
+        border: 1px solid $border-color {
+            radius: 2px;
+        }
+        margin: {
+            left: 0px;
+            right: 8px;
+            // bottom: 4px;
+            top: -2px * $size;
+        }
+        padding: {
+            top: 3px;
+            bottom: 3px;
+            left: 2px;
+            right: 2px;
+        }
+        width: 16px * $size;
+        height: auto;
+    }
+}

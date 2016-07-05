@@ -1,0 +1,33 @@
+{
+  "name": "filext",
+  "version": "0.1.0",
+  "description": "A JavaScript and CSS drop-in that gives you a nice way to display files you are referring to in manuals, guides, blogs, etc.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmsmith22389/filext.git"
+  },
+  "author": "Neil Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmsmith22389/filext/issues"
+  },
+  "homepage": "https://github.com/nmsmith22389/filext#readme",
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-uglify": "^1.5.4",
+    "jshint": "^2.9.2"
+  }
+}
