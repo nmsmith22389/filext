@@ -7,6 +7,7 @@ $white:          #fefefe;
 
 // Settings
 $size:           1;
+$icon-height:    20px;
 $bg-color:       #f6f6f6;
 $icon-bg-color:  $white;
 $border-color:   $medium-gray;
@@ -15,22 +16,22 @@ $base-text-size: 0.9em;
 .filext {
     display: inline-block;
     background-color: $bg-color;
-    vertical-align: baseline;
+    vertical-align: middle;
     color: $black;
     font: {
         size: $base-text-size * $size;
         family: Arial;
         weight: normal;
     }
-    line-height: 22px * $size;
-    height: 22px * $size;
+    // line-height: 1em;//($icon-height + 2px + 2px) * $size; // (Icon height + padding + border) * size
+    // min-height: 22px * $size;
     border: 1px solid $border-color {
         radius: 3px;
     }
     padding: {
-        top: 6px;
+        top: 2px;
         right: 10px;
-        bottom: 5px;
+        bottom: 2px;
         left: 6px;
     }
     margin: {
@@ -39,7 +40,7 @@ $base-text-size: 0.9em;
     }
     .filext-icon {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: -55%;
         background-color: $icon-bg-color;
         border: 1px solid $border-color {
             radius: 2px;
@@ -47,16 +48,16 @@ $base-text-size: 0.9em;
         margin: {
             left: 0px;
             right: 8px;
-            // bottom: 4px;
-            top: -2px * $size;
+            bottom: 0px;
+            top: 1px; //-3px * $size;
         }
         padding: {
-            top: 3px;
-            bottom: 3px;
-            left: 2px;
-            right: 2px;
+            top: 1px;
+            bottom: 1px;
+            left: 0px;
+            right: 0px;
         }
-        width: 16px * $size;
-        height: auto;
+        width: auto; // 16px * $size
+        height: $icon-height * $size;
     }
 }

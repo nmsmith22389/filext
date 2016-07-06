@@ -1,33 +1,32 @@
 .filext {
   display: inline-block;
   background-color: #f6f6f6;
-  vertical-align: baseline;
+  vertical-align: middle;
   color: #0a0a0a;
   font-size: 0.9em;
   font-family: Arial;
   font-weight: normal;
-  line-height: 22px;
-  height: 22px;
   border: 1px solid #cacaca;
     border-radius: 3px;
-  padding-top: 6px;
+  padding-top: 2px;
   padding-right: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   padding-left: 6px;
   margin-left: 4px;
   margin-right: 4px; }
   .filext .filext-icon {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: -55%;
     background-color: #fefefe;
     border: 1px solid #cacaca;
       border-radius: 2px;
     margin-left: 0px;
     margin-right: 8px;
-    margin-top: -2px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 2px;
-    padding-right: 2px;
-    width: 16px;
-    height: auto; }
+    margin-bottom: 0px;
+    margin-top: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: auto;
+    height: 20px; }
