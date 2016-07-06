@@ -1,19 +1,22 @@
 var fileTypes = {
     blank:    "blank", // Blank Icon for Undefined Type
+    bmp:      "image",
+    doc:      "docx",
+    docx:     "docx",
+    gif:      "image",
     html:     "html",
     htmlTwig: "twig",
-    png:      "image",
-    jpg:      "image",
     jpeg:     "image",
-    gif:      "image",
-    svg:      "image",
-    bmp:      "image",
-    docx:     "docx",
-    doc:      "docx",
-    pptx:     "pptx",
+    jpg:      "image",
+    png:      "image",
     ppt:      "pptx",
-    xlsx:     "xlsx",
-    xls:      "xlsx"
+    pptx:     "pptx",
+    svg:      "image",
+    psd:      "ps",
+    afdesign: "afdesign",
+    afphoto:  "afphoto",
+    xls:      "xlsx",
+    xlsx:     "xlsx"
 };
 
 $('.filext').each(function(index) {
@@ -22,22 +25,21 @@ $('.filext').each(function(index) {
     // 2 = second ext (test.html.twig)
     var extRaw = $(this).html().match(/\.([\w]+)\.?([\w]*)$/i);
     var ext;
-    var icon = fileTypes[ext];
 
     if (extRaw[2]) {
         ext = extRaw[1] + extRaw[2].replace(/^[a-z]/g, extRaw[2][0].toUpperCase());
-        // document.write(ext);
     } else {
         ext = extRaw[1];
     }
 
+    var icon = fileTypes[ext];
     if (!icon) {
         icon = fileTypes.blank;
     }
 
     // document.write(icon+'<br>'); // Debug
     $(this).html(
-        '<img src="http://neil-smith.org/filext/icons/' + 
+        '<img src="icons/' + 
         icon + 
         '.svg" class="filext-icon" aria-hidden="true">' + 
         $(this).html()
