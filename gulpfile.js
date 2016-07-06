@@ -70,6 +70,7 @@ gulp.task('imagemin', function() {
     gulp.src('src/icons/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/icons'))
+        .pipe(gulp.dest('docs/icons'))
 })
 
 gulp.task('prefix', function () {
