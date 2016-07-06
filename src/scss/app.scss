@@ -40,11 +40,11 @@ $base-text-size: 0.9em;
     }
     .filext-icon {
         display: inline-block;
-        vertical-align: -55%;
-        background-color: $icon-bg-color;
-        border: 1px solid $border-color {
-            radius: 2px;
-        }
+        vertical-align: -50%;
+        // background-color: $icon-bg-color;
+        // border: 1px solid $border-color {
+        //     radius: 2px;
+        // }
         margin: {
             left: 0px;
             right: 8px;
@@ -53,7 +53,7 @@ $base-text-size: 0.9em;
         }
         padding: {
             top: 1px;
-            bottom: 1px;
+            bottom: 0px;
             left: 0px;
             right: 0px;
         }
