@@ -34,11 +34,9 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('dist'))
     .pipe(rename('filext.min.css'))
     .pipe(cssnano())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
     // .pipe(notify('SCSS to CSS - Successful'))
-    /*.pipe(browserSync.reload({
-      stream: true
-    }))*/
+    .pipe(browserSync.stream());
 });
 
 // Concatenate & Minify JS
@@ -51,27 +49,33 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'prefix'], function(){
+gulp.task('watch', ['sass', 'scripts', 'imagemin', 'prefix', 'browserSync'], function(){
     gulp.watch('src/scss/**/*.scss', ['sass']); 
-    gulp.watch('dist/*.css', ['prefix']); 
-
+    gulp.watch('dist/*.css', ['prefix', browserSync.reload]); 
+    gulp.watch('src/js/*.js', ['scripts', browserSync.reload]); 
+    gulp.watch('src/icons/*.svg', ['imagemin', browserSync.reload]); 
+    
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('docs/**/*.html', browserSync.reload); 
-    gulp.watch('src/js/*.js', browserSync.reload); 
-})
+    gulp.watch('docs/*.html', browserSync.reload); 
+});
 
 gulp.task('browserSync', function() {
-    browserSync.init({
+    /*browserSync.init({
         proxy: "filext.dev",
+    });*/
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
     });
-})
+});
 
 gulp.task('imagemin', function() {
     gulp.src('src/icons/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/icons'))
-        .pipe(gulp.dest('docs/icons'))
-})
+        .pipe(gulp.dest('docs/icons'));
+});
 
 gulp.task('prefix', function () {
     return gulp.src('dist/*.css')
