@@ -12,15 +12,18 @@ $bg-color:       #f6f6f6;
 $icon-bg-color:  $white;
 $border-color:   $medium-gray;
 $base-text-size: 0.9em;
+    // Dark
+    $border-color-dark: $dark-gray;
+    $bg-color-dark: #2a2a2a;
 
 .filext {
     display: inline-block;
     background-color: $bg-color;
-    vertical-align: middle;
+    vertical-align: baseline;
     color: $black;
     font: {
         size: $base-text-size * $size;
-        family: Arial;
+        family: inherit;
         weight: normal;
     }
     // line-height: 1em;//($icon-height + 2px + 2px) * $size; // (Icon height + padding + border) * size
@@ -38,16 +41,21 @@ $base-text-size: 0.9em;
         left: 4px;
         right: 4px;
     }
+    &.dark {
+        background-color: $bg-color-dark;
+        border-color: $border-color-dark;
+        color: $light-gray;
+    }
     .filext-icon {
         display: inline-block;
-        vertical-align: -50%;
+        vertical-align: -32%;
         // background-color: $icon-bg-color;
         // border: 1px solid $border-color {
         //     radius: 2px;
         // }
         margin: {
             left: 0px;
-            right: 8px;
+            right: 2px;
             bottom: 0px;
             top: 1px; //-3px * $size;
         }
