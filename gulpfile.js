@@ -10,12 +10,25 @@ var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin = require('gulp-imagemin');
+var del = require('del');
 
 // Notify
 // var notify = require("gulp-notify");
 
 // Default Task
-gulp.task('default', [/*'lint',*/ 'sass', 'scripts', 'imagemin', 'prefix']);
+gulp.task('default', [/*'lint',*/'clean:icons', 'sass', 'scripts', 'imagemin', 'prefix']);
+
+gulp.task('clean:icons', function () {
+  return del([
+    'dist/icons/*',
+    'docs/icons/*'
+    // 'dist/report.csv',
+    // here we use a globbing pattern to match everything inside the `mobile` folder
+    // 'dist/mobile/**/*',
+    // we don't want to clean this file though so we negate the pattern
+    // '!dist/mobile/deploy.json'
+  ]);
+});
 
 // Lint Task
 gulp.task('lint', function() {
@@ -53,7 +66,7 @@ gulp.task('watch', ['sass', 'scripts', 'imagemin', 'prefix', 'browserSync'], fun
     gulp.watch('src/scss/**/*.scss', ['sass']); 
     gulp.watch('dist/*.css', ['prefix', browserSync.reload]); 
     gulp.watch('src/js/*.js', ['scripts', browserSync.reload]); 
-    gulp.watch('src/icons/*.svg', ['imagemin', browserSync.reload]); 
+    gulp.watch('src/icons/*.svg', ['clean:icons', 'imagemin', browserSync.reload]); 
     
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('docs/*.html', browserSync.reload); 

@@ -1,22 +1,29 @@
 var fileTypes = {
-    blank:    "blank", // Blank Icon for Undefined Type
-    bmp:      "image",
-    doc:      "docx",
-    docx:     "docx",
-    gif:      "image",
-    html:     "html",
-    htmlTwig: "twig",
-    jpeg:     "image",
-    jpg:      "image",
-    png:      "image",
-    ppt:      "pptx",
-    pptx:     "pptx",
-    svg:      "image",
-    psd:      "ps",
-    afdesign: "afdesign",
-    afphoto:  "afphoto",
-    xls:      "xlsx",
-    xlsx:     "xlsx"
+    // Blank Icon for Undefined Type
+    blank:    "file_type_blank",
+
+    // ---------- Images ----------
+    afdesign: "file_type_affinitydesign",
+    afphoto:  "file_type_affinityphoto",
+    bmp:      "file_type_image",
+    gif:      "file_type_image",
+    jpeg:     "file_type_image",
+    jpg:      "file_type_image",
+    png:      "file_type_image",
+    psd:      "file_type_photoshop",
+    svg:      "file_type_svg",
+
+    // ---------- Text ----------
+    doc:      "file_type_word",
+    docx:     "file_type_word",
+    ppt:      "file_type_powerpoint",
+    pptx:     "file_type_powerpoint",
+    xls:      "file_type_excel",
+    xlsx:     "file_type_excel",
+
+    // ---------- Web ----------
+    html:     "file_type_html",
+    htmlTwig: "file_type_twig"
 };
 
 $('.filext').each(function(index) {
