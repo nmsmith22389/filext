@@ -6,21 +6,24 @@ $black:          #0a0a0a;
 $white:          #fefefe;
 
 // Settings
-$size:           1;
-$icon-height:    20px;
-$bg-color:       #f6f6f6;
-$icon-bg-color:  $white;
-$border-color:   $medium-gray;
-$base-text-size: 0.9em;
+$size:              1;
+$icon-height:       20px;
+$bg-color:          #f6f6f6;
+$icon-bg-color:     $white;
+$border-color:      $medium-gray;
+$link-hover-darken: 10%;
+$base-text-size:    0.9em;
     // Dark
     $border-color-dark: $dark-gray;
-    $bg-color-dark: #2a2a2a;
+    $bg-color-dark:     #2a2a2a;
+    $link-hover-dark-lighten: 13%;
 
 .filext {
     display: inline-block;
     background-color: $bg-color;
     vertical-align: baseline;
     color: $black;
+    cursor: default;
     font: {
         size: $base-text-size * $size;
         family: inherit;
@@ -41,10 +44,19 @@ $base-text-size: 0.9em;
         left: 4px;
         right: 4px;
     }
+    a &:hover {
+        background-color: darken($bg-color, $link-hover-darken);
+        cursor: pointer;
+    }
     &.dark {
         background-color: $bg-color-dark;
         border-color: $border-color-dark;
         color: $light-gray;
+
+        a &:hover {
+            background-color: lighten($bg-color-dark, $link-hover-dark-lighten);
+            cursor: pointer;
+        }
     }
     .filext-icon {
         display: inline-block;

@@ -3,6 +3,7 @@
   background-color: #f6f6f6;
   vertical-align: baseline;
   color: #0a0a0a;
+  cursor: default;
   font-size: 0.9em;
   font-family: inherit;
   font-weight: normal;
@@ -14,10 +15,16 @@
   padding-left: 6px;
   margin-left: 4px;
   margin-right: 4px; }
+  a .filext:hover {
+    background-color: #dddddd;
+    cursor: pointer; }
   .filext.dark {
     background-color: #2a2a2a;
     border-color: #8a8a8a;
     color: #e6e6e6; }
+    a .filext.dark:hover {
+      background-color: #4b4b4b;
+      cursor: pointer; }
   .filext .filext-icon {
     display: inline-block;
     vertical-align: -32%;
